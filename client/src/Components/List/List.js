@@ -1,0 +1,333 @@
+import React from "react";
+import '../../App.css';
+import ListItem from "../ListItem/ListItem";
+
+
+function List() {
+    // const items = [
+    //     { id: 1, name: 'Curency1', img: logo, value: 35, top24: '35', low24: '25', percent: 10 },
+    //     { id: 2, name: 'Curency2', img: logo, value: 12, top24: '20', low24: '12', percent: -23 },
+    //     { id: 3, name: 'Curency3', img: logo, value: 4, top24: '4', low24: '2', percent: 50 },
+    //     { id: 4, name: 'Curency4', img: logo, value: 10, top24: '12', low24: '7', percent: 3 },
+    //     { id: 5, name: 'Curency5', img: logo, value: 35, top24: '35', low24: '25', percent: 10 },
+    //     { id: 6, name: 'Curency6', img: logo, value: 12, top24: '20', low24: '12', percent: -23 },
+    //     { id: 7, name: 'Curency7', img: logo, value: 4, top24: '4', low24: '2', percent: 50 },
+    //     { id: 8, name: 'Curency8', img: logo, value: 10, top24: '12', low24: '7', percent: 3 }
+    // ];
+
+    // const items =[
+    //     {
+    //         "id": "bitcoin",
+    //         "symbol": "btc",
+    //         "name": "Bitcoin",
+    //         "image": "https://assets.coingecko.com/coins/images/1/large/bitcoin.png?1547033579",
+    //         "current_price": 19112.03,
+    //         "market_cap": 366366786750,
+    //         "market_cap_rank": 1,
+    //         "fully_diluted_valuation": 401195316343,
+    //         "total_volume": 24178538520,
+    //         "high_24h": 19228.69,
+    //         "low_24h": 18969.08,
+    //         "price_change_24h": 26.76,
+    //         "price_change_percentage_24h": 0.14022,
+    //         "market_cap_change_24h": 493265214,
+    //         "market_cap_change_percentage_24h": 0.13482,
+    //         "circulating_supply": 19176950,
+    //         "total_supply": 21000000,
+    //         "max_supply": 21000000,
+    //         "ath": 69045,
+    //         "ath_change_percentage": -72.33077,
+    //         "ath_date": "2021-11-10T14:24:11.849Z",
+    //         "atl": 67.81,
+    //         "atl_change_percentage": 28073.482,
+    //         "atl_date": "2013-07-06T00:00:00.000Z",
+    //         "roi": null,
+    //         "last_updated": "2022-10-12T08:03:34.423Z"
+    //     },
+    //     {
+    //         "id": "ethereum",
+    //         "symbol": "eth",
+    //         "name": "Ethereum",
+    //         "image": "https://assets.coingecko.com/coins/images/279/large/ethereum.png?1595348880",
+    //         "current_price": 1294.77,
+    //         "market_cap": 156550237672,
+    //         "market_cap_rank": 2,
+    //         "fully_diluted_valuation": null,
+    //         "total_volume": 7474894344,
+    //         "high_24h": 1298.47,
+    //         "low_24h": 1276.28,
+    //         "price_change_24h": 10.56,
+    //         "price_change_percentage_24h": 0.82264,
+    //         "market_cap_change_24h": 1380673899,
+    //         "market_cap_change_percentage_24h": 0.88978,
+    //         "circulating_supply": 120914876.858628,
+    //         "total_supply": 120912906.858628,
+    //         "max_supply": null,
+    //         "ath": 4878.26,
+    //         "ath_change_percentage": -73.45607,
+    //         "ath_date": "2021-11-10T14:24:19.604Z",
+    //         "atl": 0.432979,
+    //         "atl_change_percentage": 298963.55351,
+    //         "atl_date": "2015-10-20T00:00:00.000Z",
+    //         "roi": {
+    //             "times": 89.57129551482224,
+    //             "currency": "btc",
+    //             "percentage": 8957.129551482225
+    //         },
+    //         "last_updated": "2022-10-12T08:03:43.981Z"
+    //     },
+    //     {
+    //         "id": "tether",
+    //         "symbol": "usdt",
+    //         "name": "Tether",
+    //         "image": "https://assets.coingecko.com/coins/images/325/large/Tether-logo.png?1598003707",
+    //         "current_price": 0.999832,
+    //         "market_cap": 68410339705,
+    //         "market_cap_rank": 3,
+    //         "fully_diluted_valuation": null,
+    //         "total_volume": 29660506868,
+    //         "high_24h": 1.006,
+    //         "low_24h": 0.998335,
+    //         "price_change_24h": -0.0004139169282108,
+    //         "price_change_percentage_24h": -0.04138,
+    //         "market_cap_change_24h": -34550990.594055176,
+    //         "market_cap_change_percentage_24h": -0.05048,
+    //         "circulating_supply": 68421859091.1743,
+    //         "total_supply": 68421859091.1743,
+    //         "max_supply": null,
+    //         "ath": 1.32,
+    //         "ath_change_percentage": -24.43037,
+    //         "ath_date": "2018-07-24T00:00:00.000Z",
+    //         "atl": 0.572521,
+    //         "atl_change_percentage": 74.64132,
+    //         "atl_date": "2015-03-02T00:00:00.000Z",
+    //         "roi": null,
+    //         "last_updated": "2022-10-12T08:01:50.137Z"
+    //     },
+    //     {
+    //         "id": "usd-coin",
+    //         "symbol": "usdc",
+    //         "name": "USD Coin",
+    //         "image": "https://assets.coingecko.com/coins/images/6319/large/USD_Coin_icon.png?1547042389",
+    //         "current_price": 1,
+    //         "market_cap": 45946032470,
+    //         "market_cap_rank": 4,
+    //         "fully_diluted_valuation": null,
+    //         "total_volume": 2982004463,
+    //         "high_24h": 1.007,
+    //         "low_24h": 0.997308,
+    //         "price_change_24h": 0.0003555,
+    //         "price_change_percentage_24h": 0.03555,
+    //         "market_cap_change_24h": -76554187.2758255,
+    //         "market_cap_change_percentage_24h": -0.16634,
+    //         "circulating_supply": 45947388166.6006,
+    //         "total_supply": 45947378870.71,
+    //         "max_supply": null,
+    //         "ath": 1.17,
+    //         "ath_change_percentage": -14.72043,
+    //         "ath_date": "2019-05-08T00:40:28.300Z",
+    //         "atl": 0.891848,
+    //         "atl_change_percentage": 12.13557,
+    //         "atl_date": "2021-05-19T13:14:05.611Z",
+    //         "roi": null,
+    //         "last_updated": "2022-10-12T08:03:46.360Z"
+    //     },
+    //     {
+    //         "id": "binancecoin",
+    //         "symbol": "bnb",
+    //         "name": "BNB",
+    //         "image": "https://assets.coingecko.com/coins/images/825/large/bnb-icon2_2x.png?1644979850",
+    //         "current_price": 271.3,
+    //         "market_cap": 44297809978,
+    //         "market_cap_rank": 5,
+    //         "fully_diluted_valuation": 44796952389,
+    //         "total_volume": 439994574,
+    //         "high_24h": 273.67,
+    //         "low_24h": 269.98,
+    //         "price_change_24h": 0.253768,
+    //         "price_change_percentage_24h": 0.09362,
+    //         "market_cap_change_24h": 3617219,
+    //         "market_cap_change_percentage_24h": 0.00817,
+    //         "circulating_supply": 163276974.63,
+    //         "total_supply": 163276974.63,
+    //         "max_supply": 165116760,
+    //         "ath": 686.31,
+    //         "ath_change_percentage": -60.46986,
+    //         "ath_date": "2021-05-10T07:24:17.097Z",
+    //         "atl": 0.0398177,
+    //         "atl_change_percentage": 681250.22533,
+    //         "atl_date": "2017-10-19T00:00:00.000Z",
+    //         "roi": null,
+    //         "last_updated": "2022-10-12T08:01:44.305Z"
+    //     },
+    //     {
+    //         "id": "ripple",
+    //         "symbol": "xrp",
+    //         "name": "XRP",
+    //         "image": "https://assets.coingecko.com/coins/images/44/large/xrp-symbol-white-128.png?1605778731",
+    //         "current_price": 0.489241,
+    //         "market_cap": 24470641877,
+    //         "market_cap_rank": 6,
+    //         "fully_diluted_valuation": 48976366346,
+    //         "total_volume": 1846346760,
+    //         "high_24h": 0.501307,
+    //         "low_24h": 0.480914,
+    //         "price_change_24h": 0.00049585,
+    //         "price_change_percentage_24h": 0.10145,
+    //         "market_cap_change_24h": -2638909.7804718018,
+    //         "market_cap_change_percentage_24h": -0.01078,
+    //         "circulating_supply": 49964184162,
+    //         "total_supply": 99989267435,
+    //         "max_supply": 100000000000,
+    //         "ath": 3.4,
+    //         "ath_change_percentage": -85.58913,
+    //         "ath_date": "2018-01-07T00:00:00.000Z",
+    //         "atl": 0.00268621,
+    //         "atl_change_percentage": 18131.88882,
+    //         "atl_date": "2014-05-22T00:00:00.000Z",
+    //         "roi": null,
+    //         "last_updated": "2022-10-12T08:05:01.942Z"
+    //     },
+    //     {
+    //         "id": "binance-usd",
+    //         "symbol": "busd",
+    //         "name": "Binance USD",
+    //         "image": "https://assets.coingecko.com/coins/images/9576/large/BUSD.png?1568947766",
+    //         "current_price": 0.999925,
+    //         "market_cap": 21485765806,
+    //         "market_cap_rank": 7,
+    //         "fully_diluted_valuation": null,
+    //         "total_volume": 6115946583,
+    //         "high_24h": 1.004,
+    //         "low_24h": 0.994272,
+    //         "price_change_24h": 0.00050817,
+    //         "price_change_percentage_24h": 0.05085,
+    //         "market_cap_change_24h": -39541931.45635986,
+    //         "market_cap_change_percentage_24h": -0.1837,
+    //         "circulating_supply": 21492001206.06,
+    //         "total_supply": 21492001206.06,
+    //         "max_supply": null,
+    //         "ath": 1.15,
+    //         "ath_change_percentage": -13.38534,
+    //         "ath_date": "2020-03-13T02:35:42.953Z",
+    //         "atl": 0.901127,
+    //         "atl_change_percentage": 10.93993,
+    //         "atl_date": "2021-05-19T13:04:37.445Z",
+    //         "roi": null,
+    //         "last_updated": "2022-10-12T08:03:49.153Z"
+    //     },
+    //     {
+    //         "id": "cardano",
+    //         "symbol": "ada",
+    //         "name": "Cardano",
+    //         "image": "https://assets.coingecko.com/coins/images/975/large/cardano.png?1547034860",
+    //         "current_price": 0.39417,
+    //         "market_cap": 13331887883,
+    //         "market_cap_rank": 8,
+    //         "fully_diluted_valuation": 17738920683,
+    //         "total_volume": 399788086,
+    //         "high_24h": 0.401627,
+    //         "low_24h": 0.38999,
+    //         "price_change_24h": -0.002679192617970672,
+    //         "price_change_percentage_24h": -0.67512,
+    //         "market_cap_change_24h": -91063766.38804054,
+    //         "market_cap_change_percentage_24h": -0.67842,
+    //         "circulating_supply": 33820262543.95,
+    //         "total_supply": 45000000000,
+    //         "max_supply": 45000000000,
+    //         "ath": 3.09,
+    //         "ath_change_percentage": -87.22989,
+    //         "ath_date": "2021-09-02T06:00:10.474Z",
+    //         "atl": 0.01925275,
+    //         "atl_change_percentage": 1947.50972,
+    //         "atl_date": "2020-03-13T02:22:55.044Z",
+    //         "roi": null,
+    //         "last_updated": "2022-10-12T08:05:03.260Z"
+    //     },
+    //     {
+    //         "id": "solana",
+    //         "symbol": "sol",
+    //         "name": "Solana",
+    //         "image": "https://assets.coingecko.com/coins/images/4128/large/solana.png?1640133422",
+    //         "current_price": 31.26,
+    //         "market_cap": 11171399363,
+    //         "market_cap_rank": 9,
+    //         "fully_diluted_valuation": null,
+    //         "total_volume": 647094839,
+    //         "high_24h": 31.78,
+    //         "low_24h": 30.6,
+    //         "price_change_24h": -0.3160635157662952,
+    //         "price_change_percentage_24h": -1.0011,
+    //         "market_cap_change_24h": -108096944.63674927,
+    //         "market_cap_change_percentage_24h": -0.95835,
+    //         "circulating_supply": 357458423.606992,
+    //         "total_supply": 508180963.57,
+    //         "max_supply": null,
+    //         "ath": 259.96,
+    //         "ath_change_percentage": -87.97799,
+    //         "ath_date": "2021-11-06T21:54:35.825Z",
+    //         "atl": 0.500801,
+    //         "atl_change_percentage": 6140.46695,
+    //         "atl_date": "2020-05-11T19:35:23.449Z",
+    //         "roi": null,
+    //         "last_updated": "2022-10-12T08:03:32.920Z"
+    //     },
+    //     {
+    //         "id": "dogecoin",
+    //         "symbol": "doge",
+    //         "name": "Dogecoin",
+    //         "image": "https://assets.coingecko.com/coins/images/5/large/dogecoin.png?1547792256",
+    //         "current_price": 0.06033,
+    //         "market_cap": 8232920347,
+    //         "market_cap_rank": 10,
+    //         "fully_diluted_valuation": null,
+    //         "total_volume": 242477066,
+    //         "high_24h": 0.060768,
+    //         "low_24h": 0.05901,
+    //         "price_change_24h": 0.00106871,
+    //         "price_change_percentage_24h": 1.80337,
+    //         "market_cap_change_24h": 147236530,
+    //         "market_cap_change_percentage_24h": 1.82095,
+    //         "circulating_supply": 136448516383.705,
+    //         "total_supply": null,
+    //         "max_supply": null,
+    //         "ath": 0.731578,
+    //         "ath_change_percentage": -91.75238,
+    //         "ath_date": "2021-05-08T05:08:23.458Z",
+    //         "atl": 0.0000869,
+    //         "atl_change_percentage": 69330.6004,
+    //         "atl_date": "2015-05-06T00:00:00.000Z",
+    //         "roi": null,
+    //         "last_updated": "2022-10-12T08:03:17.179Z"
+    //     }
+    // ];
+
+    const [items, setItems] = React.useState(null);
+    const [loaded, isLoaded] = React.useState(false);
+    React.useEffect(() => {
+        fetch("http://localhost:8080/api")
+            .then((res) => res.json())
+            .then((data) => {
+                setItems(data)
+                console.log(data)
+                isLoaded(true);
+            });
+    }, []);
+
+    return (
+        (
+            loaded ?
+                <div className='container'>
+                    <h1>Curencies</h1>
+                    <ul style={{ listStyleType: 'none', padding: 0, margin: 0 }}>
+                        {items.map((item) => <li key={item.id}><ListItem item={item} /></li>)}
+                    </ul>
+                </div>
+                :
+                <h1>Loading Data</h1>
+        )
+    );
+
+}
+
+export default List;
